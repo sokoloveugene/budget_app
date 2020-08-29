@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.amount,
+.comments {
+  box-sizing: border-box;
+  display: block;
+  width: 250px;
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 0 13px;
+  margin: 0 auto 15px auto;
+  line-height: 30px;
+  font-size: 12px;
+  height: 30px;
+}
+
+.submitBtn {
+  display: inline-block;
+  width: 100px;
+  padding: 8px 0 8px 0;
+  text-transform: capitalize;
+  background-color: #ec8181;
+  border: none;
+  border-radius: 6px;
+  color: white;
+}
