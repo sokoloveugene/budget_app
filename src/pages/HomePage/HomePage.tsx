@@ -1,18 +1,13 @@
 import * as React from "react";
-import ShowData from "../../components/ShowData/ShowData";
+import CreditCardData from "../../components/CreditCardData/CreditCardData";
 import { connect } from "react-redux";
-import {
-  IState,
-  getBalance,
-  sumAllSpends,
-  sumAllIncomes,
-} from "../../redux/Selectors";
+import { IState, getBalance } from "../../redux/Selectors";
 import { Link } from "react-router-dom";
-import styles from "./HomePage.module.css";
-
 import { getAllOperations } from "../../redux/Selectors";
 import { deleteOperation } from "../../redux/Operations/operationsActions";
 import { updateBalanceAfterDelete } from "../../redux/SetBalance/SetBalanceActions";
+
+import styles from "./HomePage.module.css";
 
 import OperationsList from "../../components/OperationsList/OperationsList";
 
@@ -30,45 +25,22 @@ const AllOperationsList = connect(mstp, mdtp)(OperationsList);
 
 interface HomePageProps {
   balance: number;
-  allExpenses: number;
-  allIncomes: number;
 }
 
-const HomePage: React.FC<HomePageProps> = ({
-  balance,
-  allExpenses,
-  allIncomes,
-}) => {
+const HomePage: React.FC<HomePageProps> = ({ balance }) => {
   return (
     <>
-      <ShowData
-        redirectLink="/change_balance"
-        title="balance"
-        value={balance}
-      />
-      <ShowData
-        redirectLink="/all_expenses"
-        title="total spend"
-        value={allExpenses}
-      />
-      <ShowData
-        redirectLink="/all_incomes"
-        title="total incomes"
-        value={allIncomes}
-      />
-
+      <CreditCardData title="balance" value={balance} />
       <Link className={styles.addOperationBtn} to="/add_operation">
-        +
+        &#10133;
       </Link>
-      <AllOperationsList />
+      <AllOperationsList title="Recent operations:" />
     </>
   );
 };
 
 const mapStateToProps = (state: IState) => ({
   balance: getBalance(state),
-  allExpenses: sumAllSpends(state),
-  allIncomes: sumAllIncomes(state),
 });
 
 export default connect(mapStateToProps)(HomePage);

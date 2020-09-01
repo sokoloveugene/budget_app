@@ -20,5 +20,9 @@ const IncomeOperationsList = connect(
   mapDispatchToProps
 )(OperationsList);
 
-const ShowIncomesListPage: React.FC = () => <IncomeOperationsList />;
+interface ShowIncomesListPageProps {
+  title?: string;
+}
+
+const ShowIncomesListPage: React.FC<ShowIncomesListPageProps> = ({title}) => <IncomeOperationsList title={title} />;
 export default ShowIncomesListPage;

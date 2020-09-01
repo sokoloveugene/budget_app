@@ -2,6 +2,7 @@ import { createStore, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import balanceReducer from "./SetBalance/SetBalanceReducer";
 import operationsReducer from "./Operations/operationsReducer";
+import themeReducer from "./Theme/ThemeReducer";
 
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
@@ -9,6 +10,7 @@ import storage from "redux-persist/lib/storage";
 const rootReducer = combineReducers({
   balance: balanceReducer,
   operations: operationsReducer,
+  isDarkTheme: themeReducer,
 });
 
 const persistConfig = {

@@ -14,9 +14,11 @@ export const checkValue = (value: number): string => {
 
     case value >= 1e3:
     case value < -1e3:
-      return `${(value / 1e3).toFixed(1)} K`;
+      return `${value.toFixed(1)}`;
 
     default:
-      return value.toString();
+      return value.toFixed(1);
   }
 };
+
+export const composeStyles = (...styles: string[]):string => styles.join(" ")

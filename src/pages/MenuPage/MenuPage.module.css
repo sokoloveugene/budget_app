@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+    align-items: flex-start;
+}
+
+.menuContainer {
+  list-style: none;
+}
+
+.menuItem {
+  text-decoration: none;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: inherit;
+}
+
+.listItem {
+  margin-bottom: 30px;
+}

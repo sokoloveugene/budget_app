@@ -1,6 +1,13 @@
+.radioListContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
 .formRadioBtn {
   display: inline-block;
-  margin-right: 10px;
+  margin: 0 10px 10px 10px;
 }
 .formRadioBtn input[type="radio"] {
   display: none;
@@ -17,7 +24,7 @@
 
 /* Checked */
 .formRadioBtn input[type="radio"]:checked + label {
-  background: #ffe0a6;
+  background: #8168ec;
 }
 
 /* Hover */

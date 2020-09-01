@@ -20,6 +20,11 @@ const ExpenseOperationsList = connect(
   mapDispatchToProps
 )(OperationsList);
 
-const ShowExpensesListPage: React.FC = () => <ExpenseOperationsList />;
+
+interface ShowExpensesListPageProps {
+  title?: string;
+}
+
+const ShowExpensesListPage: React.FC<ShowExpensesListPageProps> = ({title}) => <ExpenseOperationsList title={title} />;
 
 export default ShowExpensesListPage;

@@ -79,12 +79,12 @@ class AddOperation extends Component<AddOperationProps, AddOperationState> {
 
   expenseCategories = {
     name: "category",
-    options: ["house", "food", "car", "clothes", "other"],
+    options: ["house", "education", "food", "car", "clothes", "health", "other"],
   };
 
   incomeCategories = {
     name: "category",
-    options: ["salary", "bonuses", "gifts", "extra work", "dividents"],
+    options: ["salary", "bonuses", "gifts", "extra", "dividents"],
   };
 
   render() {
