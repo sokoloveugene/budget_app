@@ -4,18 +4,17 @@ import {
   IState,
   getIncomesStat,
   getExpensesStat,
-  IGetStat,
+  IFormattedStat,
 } from "../../redux/Selectors";
 import { connect } from "react-redux";
 import RadioList from "../RadioList/RadioList";
-import styles from "./Stats.module.css";
+import { Doughnut } from "react-chartjs-2";
 
-const options = ["incomes", "expenses"];
+const options: string[] = ["incomes", "expenses"];
 
 interface StatProps {
-  incomesToShow: IGetStat;
-  expensesToShow: IGetStat;
-  title: string;
+  incomesToShow: IFormattedStat;
+  expensesToShow: IFormattedStat;
 }
 
 interface StatsState {
@@ -40,22 +39,13 @@ class Stats extends Component<StatProps, StatsState> {
           name="operationType"
           onChange={this.handleChange}
         />
-        <h3>{this.props.title}</h3>
-
-        <ul className={styles.itemsContainer}>
-          {dataToShow === options[0] &&
-            Object.keys(this.props.incomesToShow).map((key) => (
-              <li className={styles.item} key={key}>
-                {key}: {this.props.incomesToShow[key]}
-              </li>
-            ))}
-          {dataToShow === options[1] &&
-            Object.keys(this.props.expensesToShow).map((key) => (
-              <li className={styles.item} key={key}>
-                {key}: {this.props.expensesToShow[key]}
-              </li>
-            ))}
-        </ul>
+        
+        {dataToShow === options[0] && (
+          <Doughnut data={this.props.incomesToShow} />
+        )}
+        {dataToShow === options[1] && (
+          <Doughnut data={this.props.expensesToShow} />
+        )}
       </>
     );
   }

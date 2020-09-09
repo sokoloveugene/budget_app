@@ -6,6 +6,8 @@ export interface IState {
   operations: operationActionInterface[];
 }
 
+export const isDarkTheme = (state: IState) => state.isDarkTheme;
+
 export const getBalance = (state: IState) => state.balance;
 
 export const getAllOperations = (state: IState) => state.operations;
@@ -22,12 +24,29 @@ export const getAllIncomes = (state: IState) =>
 export const sumAllIncomes = (state: IState) =>
   getAllIncomes(state).reduce((acc, item) => acc + item.amount, 0);
 
-export interface IGetStat {
+// FOR STATISTIC
+
+export interface IRowStat {
   [key: string]: number;
 }
 
-export const getIncomesStat = (state: IState) =>
-  getAllIncomes(state).reduce((acc, item) => {
+export interface IFormattedStat {
+  labels: string[];
+  datasets: [{ data: number[]; backgroundColor: string[] }];
+}
+
+const colorsForChart: string[] = [
+  "#FF6384",
+  "#36A2EB",
+  "#FFCE56",
+  "#D98880",
+  "#E6B0AA",
+  "#DAF7A6",
+  "#BB8FCE",
+];
+
+export const getIncomesStat = (state: IState):IFormattedStat => {
+  const rowData = getAllIncomes(state).reduce((acc, item) => {
     if (acc.hasOwnProperty(item.category)) {
       acc[item.category] += item.amount;
       return acc;
@@ -35,10 +54,21 @@ export const getIncomesStat = (state: IState) =>
       acc[item.category] = item.amount;
       return acc;
     }
-  }, {} as IGetStat);
+  }, {} as IRowStat);
 
-  export const getExpensesStat = (state: IState) =>
-  getAllSpends(state).reduce((acc, item) => {
+  return {
+    labels: Object.keys(rowData),
+    datasets: [
+      {
+        data: Object.values(rowData),
+        backgroundColor: colorsForChart,
+      },
+    ],
+  };
+};
+
+export const getExpensesStat = (state: IState): IFormattedStat => {
+  const rowData = getAllSpends(state).reduce((acc, item) => {
     if (acc.hasOwnProperty(item.category)) {
       acc[item.category] += item.amount;
       return acc;
@@ -46,7 +76,15 @@ export const getIncomesStat = (state: IState) =>
       acc[item.category] = item.amount;
       return acc;
     }
-  }, {} as IGetStat);
+  }, {} as IRowStat);
 
-
-export const isDarkTheme = (state: IState) => state.isDarkTheme;
+  return {
+    labels: Object.keys(rowData),
+    datasets: [
+      {
+        data: Object.values(rowData),
+        backgroundColor: colorsForChart,
+      },
+    ],
+  };
+};

@@ -1,7 +1,7 @@
 <svg display="none" xmlns="http://www.w3.org/2000/svg">
 	<symbol id="menu" viewBox="0 0 33 14">
 		<rect x="33" y="5" width="33" height="5" rx="2.5" transform="rotate(-180 33 5)" fill="#F8DA41"/>
-<rect x="19" y="14" width="19" height="5" rx="2.5" transform="rotate(-180 19 14)" fill="#F8DA41"/>
+		<rect x="19" y="14" width="19" height="5" rx="2.5" transform="rotate(-180 19 14)" fill="#F8DA41"/>
 	</symbol>
 
 	<symbol id="userLogo" viewBox="0 0 42 42">
