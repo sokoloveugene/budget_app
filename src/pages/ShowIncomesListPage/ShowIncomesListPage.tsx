@@ -3,6 +3,7 @@ import OperationsList from "../../components/OperationsList/OperationsList";
 import { getAllIncomes, IState } from "../../redux/Selectors";
 import { deleteOperation } from "../../redux/Operations/operationsActions";
 import { updateBalanceAfterDelete } from "../../redux/SetBalance/SetBalanceActions";
+import {IncomesInfoCard} from "../../components/InfoCard/InfoCard";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state: IState) => ({
@@ -24,5 +25,10 @@ interface ShowIncomesListPageProps {
   title?: string;
 }
 
-const ShowIncomesListPage: React.FC<ShowIncomesListPageProps> = ({title}) => <IncomeOperationsList title={title} />;
+const ShowIncomesListPage: React.FC<ShowIncomesListPageProps> = ({title}) => (
+<>
+<IncomesInfoCard />
+<IncomeOperationsList title={title} />
+</>
+);
 export default ShowIncomesListPage;

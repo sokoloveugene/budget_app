@@ -41,15 +41,13 @@ class App extends Component<MyProps, MyState> {
 
   handleChangeTheme = ():void => {
     if (this.props.isDark) {
-      this.body.style.backgroundColor = "black";
+      this.body.style.backgroundColor = "#1a1a1a";
       this.body.style.color = "white";
     } else {
       this.body.style.backgroundColor = "white";
-      this.body.style.color = "#2D2C2C";
+      this.body.style.color = "#1a1a1a";
     }
   }
-
-
 
   render() {
     return (

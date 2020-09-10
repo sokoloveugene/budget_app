@@ -6,8 +6,10 @@ import { operationActionInterface } from "../../redux/Operations/operationsActio
 import uid from "uid";
 import { IState, getBalance } from "../../redux/Selectors";
 import styles from "./AddOperationPage.module.css";
+import stylesForInput from "../../components/InputNumber/InputNumber.module.css";
 import { RouteComponentProps } from "react-router-dom";
 import RadioList from "../../components/RadioList/RadioList";
+import InputNumber from "../../components/InputNumber/InputNumber";
 import SubmitButton from "../../components/SubmitButton/SubmitButton";
 
 export enum operationTypes {
@@ -79,7 +81,15 @@ class AddOperation extends Component<AddOperationProps, AddOperationState> {
 
   expenseCategories = {
     name: "category",
-    options: ["house", "education", "food", "car", "clothes", "health", "other"],
+    options: [
+      "house",
+      "education",
+      "food",
+      "car",
+      "clothes",
+      "health",
+      "other",
+    ],
   };
 
   incomeCategories = {
@@ -97,19 +107,17 @@ class AddOperation extends Component<AddOperationProps, AddOperationState> {
           onChange={this.handleChange}
         />
 
-        <input
+        <InputNumber
           placeholder="amount"
-          className={styles.amount}
           onChange={this.handleChange}
-          value={amount}
-          type="number"
           name="amount"
           required
+          value={amount}
           step="0.01"
         />
         <input
           placeholder="comments"
-          className={styles.comments}
+          className={stylesForInput.input}
           onChange={this.handleChange}
           value={comments}
           type="text"
@@ -131,7 +139,7 @@ class AddOperation extends Component<AddOperationProps, AddOperationState> {
           />
         )}
 
-        <SubmitButton title="Add" style={styles.submitBtn} />
+        <SubmitButton title="Add"  />
       </form>
     );
   }

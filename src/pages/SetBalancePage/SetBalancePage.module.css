@@ -1,26 +1,7 @@
-
-
 .container {
-  width: 200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 7px;
-  background-color: #1e1e1e;
+  text-align: center;
 }
 
-.btn,
-.input,
 .title {
-  display: block;
-  margin: 0 auto 10px auto;
-}
-
-.btn {
-  background-color: #c38eff;
-  border: none;
-  padding: 0.4rem;
-  border-radius: 3px;
-  text-transform: uppercase;
+  margin-bottom: 40px;
 }

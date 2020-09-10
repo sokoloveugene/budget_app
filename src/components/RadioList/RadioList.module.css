@@ -9,25 +9,38 @@
   display: inline-block;
   margin: 0 10px 10px 10px;
 }
+
 .formRadioBtn input[type="radio"] {
   display: none;
 }
+
 .formRadioBtn label {
   display: inline-block;
   cursor: pointer;
-  padding: 0px 15px;
+  padding: 5px 20px;
   line-height: 34px;
-  border: 1px solid #999;
-  border-radius: 6px;
+  border-radius: 10px;
   user-select: none;
+  background-color: #f1f3f6;
+  color: rgb(26, 26, 27);
+  box-shadow: inset -3px -3px 8px rgba(255, 255, 255, 0.2);
 }
 
-/* Checked */
+.formRadioBtnDark label {
+  background-color: #464646;
+  color: rgba(255, 255, 255, 0.815);
+  box-shadow: inset -3px -3px 8px rgba(36, 36, 36, 0.2);
+}
+
 .formRadioBtn input[type="radio"]:checked + label {
-  background: #8168ec;
+  box-shadow: inset 15px 15px 25px rgba(33, 51, 102, 0.233),
+    inset -15px -15px 25px rgba(168, 167, 167, 0.336),
+    -3px -3px 8px rgba(255, 255, 255, 0.3);
+  background-color: #df6464;
 }
 
-/* Hover */
-.formRadioBtn label:hover {
-  color: #666;
+.formRadioBtnDark input[type="radio"]:checked + label {
+  box-shadow: inset 15px 15px 25px rgba(16, 16, 16, 0.171),
+    inset -15px -15px 25px rgba(36, 36, 36, 0.342),
+    -3px -3px 8px rgba(36, 36, 36, 0.2);
 }

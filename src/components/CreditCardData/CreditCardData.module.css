@@ -33,18 +33,24 @@
   padding-bottom: 62%;
 }
 
-.content {
+.card {
   position: absolute;
   width: 100%;
   min-height: 100%;
   padding: 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: space-between;
   border-radius: 12px;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+}
+
+.svg {
+  align-self: flex-start;
+  max-width: 70px;
+  max-height: 70px;
 }
 
 @keyframes gradient {

@@ -3,16 +3,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  bottom: 30px;
-  margin: 0 auto;
 }
 
 .text {
   font-weight: 600;
   font-size: 25px;
   line-height: 30px;
-  color: #2d2c2c;
   text-transform: capitalize;
 }
 
@@ -20,17 +16,18 @@
 .toggleButton {
   position: relative;
   display: inline-block;
-  width: 100px;
-  height: 50px;
+  width: 80px;
+  height: 40px;
   margin: 0;
   vertical-align: top;
   background: #ffffff;
-  border: 1px solid #bbc1e1;
+  border: 1px solid #555454;
   border-radius: 30px;
   outline: none;
   cursor: pointer;
   appearance: none;
   transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  
 }
 
 .toggleButton::after {
@@ -39,9 +36,9 @@
   position: absolute;
   left: 3px;
   top: 1.5px;
-  width: 45px;
-  height: 45px;
-  background-color: blue;
+  width: 35px;
+  height: 35px;
+  background-color: #ec6c6c;
   border-radius: 50%;
   transform: translateX(0);
   transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
@@ -53,5 +50,5 @@
 }
 
 .toggleButton:checked {
-  background-color: blue;
+  background-color: #ec6c6c;
 }

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { BalanceAction } from "../../redux/SetBalance/SetBalanceActions";
 import { RouteComponentProps } from "react-router-dom";
 import SubmitButton from "../../components/SubmitButton/SubmitButton";
+import InputNumber from "../../components/InputNumber/InputNumber";
 import styles from "./SetBalancePage.module.css";
 
 interface MyProps extends RouteComponentProps<any> {
@@ -27,20 +28,15 @@ class SetBalancePage extends React.Component<MyProps> {
     }
   };
 
+  
+
   render() {
     return (
       <div className={styles.container}>
-        <p className={styles.title}>enter balance</p>
+        <h2 className={styles.title}>Enter balance</h2>
         <form onSubmit={this.handleSubmit}>
-          <input
-            className={styles.input}
-            ref={this.inputRef}
-            type="number"
-            autoFocus
-          />
-  
-          <SubmitButton style={styles.btn} title="Save" />
-
+          <InputNumber placeholder="amount" reference={this.inputRef} />
+          <SubmitButton title="Save" />
         </form>
       </div>
     );
