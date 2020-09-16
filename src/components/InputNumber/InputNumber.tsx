@@ -9,6 +9,7 @@ interface InputNumberProps {
   required?: boolean;
   value?: string;
   step?: string;
+  autoFocus?: boolean;
 }
 
 const InputNumber: React.FC<InputNumberProps> = ({
@@ -18,14 +19,15 @@ const InputNumber: React.FC<InputNumberProps> = ({
   onChange,
   required,
   value,
-  step
+  step,
+  autoFocus,
 }) => {
   return (
     <input
       className={styles.input}
       ref={reference}
       type="number"
-      autoFocus
+      autoFocus={autoFocus}
       inputMode="numeric"
       name={name}
       placeholder={placeholder}

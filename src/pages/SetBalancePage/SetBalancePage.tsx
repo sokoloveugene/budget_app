@@ -35,7 +35,7 @@ class SetBalancePage extends React.Component<MyProps> {
       <div className={styles.container}>
         <h2 className={styles.title}>Enter balance</h2>
         <form onSubmit={this.handleSubmit}>
-          <InputNumber placeholder="amount" reference={this.inputRef} />
+          <InputNumber autoFocus placeholder="amount" reference={this.inputRef} />
           <SubmitButton title="Save" />
         </form>
       </div>
