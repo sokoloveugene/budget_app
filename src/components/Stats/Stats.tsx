@@ -9,6 +9,7 @@ import {
 import { connect } from "react-redux";
 import RadioList from "../RadioList/RadioList";
 import { Doughnut } from "react-chartjs-2";
+import NoData from "../NoData/NoData";
 
 const options: string[] = ["incomes", "expenses"];
 
@@ -32,22 +33,49 @@ class Stats extends Component<StatProps, StatsState> {
 
   render() {
     const { dataToShow } = this.state;
-    return (
-      <>
+    const { incomesToShow, expensesToShow } = this.props;
+
+    if (dataToShow === options[0]) {
+      return (
+        <>
+          <RadioList
+            options={options}
+            name="operationType"
+            onChange={this.handleChange}
+          />
+
+          {dataToShow === options[0] && incomesToShow.labels.length > 0 ? (
+            <Doughnut data={incomesToShow} />
+          ) : (
+            <NoData />
+          )}
+        </>
+      );
+    } else if (dataToShow === options[1]) {
+      return (
+        <>
+          <RadioList
+            options={options}
+            name="operationType"
+            onChange={this.handleChange}
+          />
+
+          {dataToShow === options[1] && expensesToShow.labels.length > 0 ? (
+            <Doughnut data={expensesToShow} />
+          ) : (
+            <NoData />
+          )}
+        </>
+      );
+    } else {
+      return (
         <RadioList
           options={options}
           name="operationType"
           onChange={this.handleChange}
         />
-        
-        {dataToShow === options[0] && (
-          <Doughnut data={this.props.incomesToShow} />
-        )}
-        {dataToShow === options[1] && (
-          <Doughnut data={this.props.expensesToShow} />
-        )}
-      </>
-    );
+      );
+    }
   }
 }
 

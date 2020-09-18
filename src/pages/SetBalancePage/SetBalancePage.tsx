@@ -17,7 +17,6 @@ class SetBalancePage extends React.Component<MyProps> {
     e.preventDefault();
 
     try {
-      localStorage.setItem("wasHere", JSON.stringify(true));
       const value = this.inputRef.current?.value;
       if (value) {
         this.props.setBalance(Number(value));

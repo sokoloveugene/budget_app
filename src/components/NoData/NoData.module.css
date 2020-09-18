@@ -1,0 +1,14 @@
+.container {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+.svg {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    min-height: 300px;
+}

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Component } from "react";
+import NoData from "../NoData/NoData";
 import { operationActionInterface } from "../../redux/Operations/operationsActions";
 import { checkValue } from "../../helpers/functionHelpers";
 import styles from "./OperationList.module.css";
@@ -63,7 +64,7 @@ class OperationsList extends Component<
     const { title, operations, isDark } = this.props;
 
     if (operations.length === 0) {
-      return <p>no data, sorry :(</p>;
+      return <NoData />;
     }
 
     return (
