@@ -1,8 +1,8 @@
 import ActionTypes from "../ActionTypes";
 
 interface themeAction {
-    type: string;
-    payload: boolean;
+  type: string;
+  payload: boolean;
 }
 
 export const themeReducer = (state = false, { type, payload }: themeAction) => {

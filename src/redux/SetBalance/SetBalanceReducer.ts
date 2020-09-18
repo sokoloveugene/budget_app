@@ -1,13 +1,15 @@
 import ActionTypes from "../ActionTypes";
-
-// interface balanceReducerAction {
-//     type: string;
-//     payload: {
-//         balance: number
-//     }
-// }
-
 import { operationTypes } from "../../pages/AddOperationPage/AddOperationPage";
+
+interface balanceReducerAction {
+  type: string;
+  payload:
+    | {
+        operationType: string;
+        amount: number;
+      }
+    | number;
+}
 
 export const balanceReducer = (state = 0, { type, payload }: any) => {
   switch (type) {

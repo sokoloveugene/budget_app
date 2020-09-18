@@ -1,3 +1,7 @@
+.operationsContainer {
+  margin-bottom: 70px;
+}
+
 .itemContainer {
   width: 100%;
   display: flex;

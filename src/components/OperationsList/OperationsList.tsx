@@ -43,6 +43,11 @@ class OperationsList extends Component<
     });
   };
 
+  closeModalOnBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target !== e.currentTarget) return;
+    this.resetState();
+  };
+
   confirmedDeleteOperation = (
     id: string,
     operationType: string,
@@ -66,8 +71,17 @@ class OperationsList extends Component<
         {title && <h3 className={styles.title}>{title}</h3>}
 
         {showModal && (
-          <div onClick={() => this.resetState()} className={styles.backdrop}>
-            <div className={isDark? composeStyles(styles.modalContent, styles.modalDark): styles.modalContent}>
+          <div
+            onClick={this.closeModalOnBackdropClick}
+            className={styles.backdrop}
+          >
+            <div
+              className={
+                isDark
+                  ? composeStyles(styles.modalContent, styles.modalDark)
+                  : styles.modalContent
+              }
+            >
               <p className={styles.question}>
                 Do you really want to delete this operation?
               </p>
@@ -93,7 +107,7 @@ class OperationsList extends Component<
           </div>
         )}
 
-        <div>
+        <div className={styles.operationsContainer}>
           {operations.map((operation) => {
             const hasComment = Boolean(operation.comments);
             return (
