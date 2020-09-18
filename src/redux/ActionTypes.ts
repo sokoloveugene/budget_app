@@ -6,6 +6,7 @@ const ActionTypes = {
     ADD_CATEGORY: "ADD_CATEGORY",
     DELETE_CATEGORY: "DELETE_CATEGORY",
     CHANGE_THEME: "CHANGE_THEME",
+    DELETE_SUGGESTION: "DELETE_SUGGESTION"
 };
 
 export default ActionTypes;

@@ -12,11 +12,9 @@ const operationsReducer = (
 ) => {
   switch (type) {
     case ActionTypes.ADD_OPERATION:
-      // payload in this case was operation operation object
       return [payload, ...state];
 
     case ActionTypes.DELETE_OPERATION:
-      // payload in this case was operation Id
       return state.filter(
         (item: operationActionInterface) => item.id !== payload
       );

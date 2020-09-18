@@ -4,6 +4,11 @@ export interface IState {
   isDarkTheme: boolean;
   balance: number;
   operations: operationActionInterface[];
+  suggestions: ISuggestions;
+}
+
+export interface ISuggestions {
+  [key: string]: string[];
 }
 
 export const isDarkTheme = (state: IState) => state.isDarkTheme;
@@ -88,3 +93,8 @@ export const getExpensesStat = (state: IState): IFormattedStat => {
     ],
   };
 };
+
+
+// SUGGESTIONS
+
+export const getSuggestions = (state: IState):ISuggestions => state.suggestions 

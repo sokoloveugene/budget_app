@@ -14,7 +14,7 @@ class WelcomePage extends Component<WelcomePageProps> {
       if (localStorage.getItem("wasHere")) {
         this.props.history.replace("/");
       }
-      localStorage.setItem("wasHere", JSON.stringify(true));
+      localStorage.setItem("wasHere", "true");
     } catch (err) {
       console.warn(err);
     }

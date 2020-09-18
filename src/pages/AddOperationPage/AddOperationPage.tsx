@@ -3,14 +3,15 @@ import { connect } from "react-redux";
 import { operationsAction } from "../../redux/Operations/operationsActions";
 import { BalanceAction } from "../../redux/SetBalance/SetBalanceActions";
 import { operationActionInterface } from "../../redux/Operations/operationsActions";
-import uid from "uid";
 import { IState, getBalance } from "../../redux/Selectors";
-import styles from "./AddOperationPage.module.css";
-import stylesForInput from "../../components/InputNumber/InputNumber.module.css";
 import { RouteComponentProps } from "react-router-dom";
+import Suggestions from "../../components/Suggestions/Suggestions"
+import uid from "uid";
 import RadioList from "../../components/RadioList/RadioList";
 import InputNumber from "../../components/InputNumber/InputNumber";
 import SubmitButton from "../../components/SubmitButton/SubmitButton";
+import styles from "./AddOperationPage.module.css";
+import stylesForInput from "../../components/InputNumber/InputNumber.module.css";
 
 export enum operationTypes {
   income = "income",
@@ -97,8 +98,12 @@ class AddOperation extends Component<AddOperationProps, AddOperationState> {
     options: ["salary", "bonuses", "gifts", "extra", "dividents"],
   };
 
+  onSuggestionClick = (value: string): void => {
+    this.setState((prev) => ({...prev, comments: value}))
+  }
+
   render() {
-    const { amount, comments, operationType } = this.state;
+    const { amount, comments, operationType, category } = this.state;
     return (
       <form onSubmit={this.handleSubmit} className={styles.form}>
         <RadioList
@@ -115,14 +120,7 @@ class AddOperation extends Component<AddOperationProps, AddOperationState> {
           value={amount}
           step="0.01"
         />
-        <input
-          placeholder="comments"
-          className={stylesForInput.input}
-          onChange={this.handleChange}
-          value={comments}
-          type="text"
-          name="comments"
-        />
+
         {operationType === operationTypes.expense && (
           <RadioList
             options={this.expenseCategories.options}
@@ -139,7 +137,18 @@ class AddOperation extends Component<AddOperationProps, AddOperationState> {
           />
         )}
 
-        <SubmitButton title="Add"  />
+        {category && <Suggestions category={category} onClick={this.onSuggestionClick} />}
+
+        <input
+          placeholder="comments"
+          className={stylesForInput.input}
+          onChange={this.handleChange}
+          value={comments}
+          type="text"
+          name="comments"
+        />
+
+        <SubmitButton title="Add" />
       </form>
     );
   }
