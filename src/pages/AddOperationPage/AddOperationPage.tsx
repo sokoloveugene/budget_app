@@ -5,7 +5,7 @@ import { BalanceAction } from "../../redux/SetBalance/SetBalanceActions";
 import { operationActionInterface } from "../../redux/Operations/operationsActions";
 import { IState, getBalance } from "../../redux/Selectors";
 import { RouteComponentProps } from "react-router-dom";
-import Suggestions from "../../components/Suggestions/Suggestions"
+import Suggestions from "../../components/Suggestions/Suggestions";
 import uid from "uid";
 import RadioList from "../../components/RadioList/RadioList";
 import InputNumber from "../../components/InputNumber/InputNumber";
@@ -99,8 +99,8 @@ class AddOperation extends Component<AddOperationProps, AddOperationState> {
   };
 
   onSuggestionClick = (value: string): void => {
-    this.setState((prev) => ({...prev, comments: value}))
-  }
+    this.setState((prev) => ({ ...prev, comments: value }));
+  };
 
   render() {
     const { amount, comments, operationType, category } = this.state;
@@ -137,8 +137,6 @@ class AddOperation extends Component<AddOperationProps, AddOperationState> {
           />
         )}
 
-        {category && <Suggestions category={category} onClick={this.onSuggestionClick} />}
-
         <input
           placeholder="comments"
           className={stylesForInput.input}
@@ -147,6 +145,14 @@ class AddOperation extends Component<AddOperationProps, AddOperationState> {
           type="text"
           name="comments"
         />
+
+        {category && (
+          <Suggestions
+            currentComment={comments}
+            category={category}
+            onClick={this.onSuggestionClick}
+          />
+        )}
 
         <SubmitButton title="Add" />
       </form>

@@ -1,26 +1,16 @@
 .container {
-    width: 80%;
-    margin-bottom: 20px;
-}
-
-.btn {
-    padding: 10px 20px;
-    margin: 5px;
-    outline: none;
-    text-decoration: none;
-    border-radius: 50px;
-    text-transform: uppercase;
-    background-color: #ffffff;
-    color: rgba(22, 75, 167, 0.726);
-    border: 1px solid rgba(22, 76, 167, 0.6);
+  width: 80%;
+  margin-bottom: 20px;
 }
 
 .title {
-    margin-bottom: 5px;
-    font-weight: 600;
+  margin-bottom: 5px;
+  font-weight: 600;
+  user-select: none;
 }
 
 .subTitle {
-    font-size: 10px;
-    margin-bottom: 10px;
+  font-size: 10px;
+  margin-bottom: 10px;
+  user-select: none;
 }

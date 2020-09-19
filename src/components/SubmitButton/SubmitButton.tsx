@@ -6,7 +6,10 @@ interface SubmitButtonProps {
   style?: string;
 }
 
-const SubmitButton: React.FC<SubmitButtonProps> = ({ title, style = `${styles.btn}` }) => (
+const SubmitButton: React.FC<SubmitButtonProps> = ({
+  title,
+  style = `${styles.btn}`,
+}) => (
   <button className={style} type="submit">
     {title}
   </button>

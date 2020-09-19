@@ -1,0 +1,17 @@
+.btn {
+  padding: 10px 20px;
+  margin: 5px;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: rgb(22, 75, 167);
+  border: 1px solid rgba(22, 76, 167, 0.6);
+  user-select: none;
+}
+
+.red {
+  color: red;
+  border-color: red;
+}
