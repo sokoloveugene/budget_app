@@ -54,7 +54,7 @@ class App extends Component<MyProps, MyState> {
   render() {
     const { pathname } = this.props.location;
     return (
-      <div>
+      <div className={styles.mainContainer}>
         {pathname !== "/welcome" && (
           <header className={styles.header}>
             <Link className={styles.svgContainer} to="/menu">
