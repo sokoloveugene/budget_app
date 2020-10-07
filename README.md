@@ -1,44 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This single page application was created for saving financial operations. Project was written in React + Typescript. Redux was also used for the convenience of exchanging data between components. All data is automatically save to local storage using redux persist.
 
-## Available Scripts
+At first site visiting, the user has the opportunity to set the initial balance value.
 
-In the project directory, you can run:
+When creating a new operation, user have a choice between income / expenses with categories for them.
 
-### `npm start`
+Also user can add a comment to the selected operation. If the comment is unique, it is saved for the selected category.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+When user select the same category again, he will be offered the previous options for comments. In the process of typing, they are dynamically filtered and can be selected with a short screen tap, and with a long press proposition wil be deleted.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Statistics are displayed using the react-chartjs-2 library.
 
-### `npm test`
+Svg are collected in a sprite and displayed in the operation cards depending on the category.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+It is possible to change the theme of the application. Styles are written by css modules which will allow repeating class names.
 
-### `npm run build`
+There are pages for displaying only all income / expenses with their sum.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Any operation can be deleted. The balance and other data dependent on the deleted transaction are recalculated and saved.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Это Spa приложение было создано для учета финансов. Написано на React + Typescript. Так же был использован Redux для удобства обмена данными между компонентами. Все данные автоматически пишутся в local storage благодаря redux persist.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+При первом посещении сайта у пользователя есть возможность установить начальное значение баланса.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+При создании новой операции есть выбор между доходами/расходами с категориями для них.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Можно добавить комментарий к операции. В случае если комментарий уникален - он сохраняется для выбранной категории.
 
-## Learn More
+При повторном выборе этой же категории пользователю будут предложены предыдущие варианты комментариев. В процессе набора они динамирески фильтруются и могут быть выбраны при кототком нажатии, а при длительном - удалены.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Статистика отображается с помощью библиотеки react-chartjs-2.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Svg собраны в спрайт и отображаются в карточках операции в зависимости от категории.
+
+Есть возможность смены темы приложения. Стили написаны css modules что позволет повтор названий классов.
+
+Есть страницы для отображения только всех доходов/расходов c отображением их суммы.
+
+Любая операция может быть удалена. Баланс и прочие данные, зависимые от удаленной операции пересчитываются.
