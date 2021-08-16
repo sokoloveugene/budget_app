@@ -1,3 +1,5 @@
+<img width="1608" alt="женя3" src="https://user-images.githubusercontent.com/61889941/129597475-b61295f2-0f05-4e90-b11a-6511a32a5bd0.png">
+<img width="1608" alt="женя1" src="https://user-images.githubusercontent.com/61889941/129597546-8c07479b-0911-4eb2-a5c0-76bd795b2990.png">
 This single page application was created for saving financial operations. Project was written in React + Typescript. Redux was also used for the convenience of exchanging data between components. All data is automatically save to local storage using redux persist.
 
 At first site visiting, the user has the opportunity to set the initial balance value.
